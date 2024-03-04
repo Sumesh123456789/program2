@@ -1,0 +1,36 @@
+import math
+n=int(input("Enter the number of elements: "))
+print("enter",n,"elements into list: ")
+n_num=[]
+for i in range(0,n):
+ ele=int(input())
+ n_num.append(ele)
+sum1=0
+for b in range(0,n):
+ sum1=sum1+n_num[b]
+mean=sum1/n
+print("Mean is : ",mean)
+if n%2==0:
+ median1=n_num[n//2]
+ median2=n_num[n//2-1]
+ median=(median1+median2)/2
+else:
+ median=n_num[n//2]
+print("Median is : ",median)
+sum_dev=0
+for x in n_num:
+ sum_dev=sum_dev+(x-mean)**2
+variance=sum_dev/n
+print("Variance is : ",variance)
+std_dev=math.sqrt(variance)
+print("Standard Deviation is : ",std_dev)
+position=0
+largestCount=0
+while(position<n):
+ count=n_num.count(n_num[position])
+ if(count>largestCount):
+ largestCount=count
+ valuePosition=n_num[position]
+ position+=count
+m=valuePosition
+print("Mode is:",m)
