@@ -1,0 +1,23 @@
+n=int(input("Enter the number of elements: "))
+
+print("Enter ",n,"elements into the list: ")
+
+origlist=[]
+
+for i in range(0,n):
+
+ ele=int(input())
+
+ origlist.append(ele)
+
+pos=int(input("Enter the position to rotate right: "))
+
+newpos=pos%len(origlist)
+
+print("newpos= ",newpos)
+
+rotated_list=origlist[-newpos:]+origlist[:-newpos]
+
+print("Original list: ",origlist)
+
+print("Rotated list to the right about position ",pos,":",rotated_list)
