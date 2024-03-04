@@ -1,0 +1,19 @@
+import numpy as np
+rows=int(input("Enter the number of rows: "))
+cols=int(input("Enter the number of columns: ")) 
+my_array=np.empty((rows,cols))
+for i in range (rows):
+ for j in range (cols):
+ my_array[i][j]=float(input(f"Enter the elements of each position ({i+1},{j+1}): "))
+row_sum=np.sum(my_array,axis=1)
+row_mean=np.mean(my_array,axis=1)
+row_std=np.std(my_array,axis=1)
+col_sum=np.sum(my_array,axis=0)
+col_mean=np.mean(my_array,axis=0)
+col_std=np.std(my_array,axis=0)
+print("Row statistics: ")
+for i in range (my_array.shape[0]):
+ print(f"Row{i+1}: Sum={row_sum[i]} Mean={row_mean[i]} Std={row_std[i]}")
+print("Coloumn statistics: ")
+for j in range (my_array.shape[1]):
+ print(f"Column{j+1}: Sum={col_sum[j]} Mean={col_mean[j]} Std={col_std[j]}")
