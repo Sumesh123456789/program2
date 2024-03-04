@@ -1,0 +1,9 @@
+number=int(input("Enter an integer number "))
+digit1=int(input("Enter the first digit to interchange: "))
+digit2=int(input("Enter the second digit to interchange: "))
+digits=[int(d) for d in str(number)]
+index1=digits.index(digit1)
+index2=digits.index(digit2)
+digits[index1],digits[index2]=digits[index2],digits[index1]
+result=int(''.join(map(str,digits)))
+print("The number with interchanged Digits is: ",result)
