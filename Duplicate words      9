@@ -1,0 +1,10 @@
+user_sentence=input("Enter a sentence: ")
+words=user_sentence.split()
+word_frequency={}
+for word in words:
+ word_lower=word.lower()
+ word_frequency[word_lower]=word_frequency.get(word_lower,0)+1
+print("Duplicate word and their frequencies: ")
+for word,frequency in word_frequency.items():
+ if frequency>1:
+ print(f"{word}:{frequency}")
