@@ -1,0 +1,11 @@
+import csv
+file_path='CSVFile.csv'
+try:
+ with open(file_path,'r') as csv_file:
+ reader=csv.reader(csv_file)
+ headers= next(reader)
+ print("Headers :",headers)
+ for row in reader:
+ print(row)
+except FileNotFoundError:
+ print(f"File Not Found: {file_path}")
