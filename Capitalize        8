@@ -1,0 +1,8 @@
+strings_list=input("Enter a list seperated by spaces: ").split()
+capitalized_list=[]
+for string in strings_list:
+ first_letter=string[0].upper()
+ capitalized_string=first_letter+string[1:]
+ capitalized_list.append(capitalized_string)
+print("Original list of Strings: ",strings_list)
+print("Capitalized list of strings: ",capitalized_list)
