@@ -1,0 +1,47 @@
+html_file_path="HTML.html"
+with open(html_file_path,'r',encoding='utf-8') as file:
+ html_content=file.read()
+tags_dict={}
+current_tag=None
+for char in html_content:
+ if char=='<':
+ current_tag=""
+ elif char=='>':
+ if current_tag:
+ tag_parts=current_tag.split()
+ tag_name=tag_parts[0]
+ tag_attrs=tag_parts[1:]
+ if tag_name not in tags_dict:
+ tags_dict[tag_name]=[]
+ tags_dict[tag_name].append(tag_attrs)
+ current_tag=None
+ elif current_tag is not None:
+ current_tag+=char
+print("Tags Dictionary : ")
+for tag_name,tag_info_list in tags_dict.items():
+ print(f"\n<{tag_name}>:")
+ for tag_info in tag_info_list:
+ print(tag_info)
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset"UTF-8">
+<meta name="viewport" content="width=width-device,initail-scale=1.0">
+<style>
+h1{
+color=#333;
+}
+</style>
+</head>
+<p>this is a sample HTML file with basic tags and attributes</p>
+<a href="https://www.example.com" target="_blank">Visit examle.com</a>
+</html>
